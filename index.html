@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>danjkp</title>
+    <link rel="stylesheet" href="style.css">
+</head> 
+<body class="body">
+    <div class="container_login"><br><center><h1>Login</h1></center><br>
+        <span></span>
+    <center>
+        <label for="txt_user"><br>E-Mail :</label>
+        <input type="text" id="txt_user" placeholder = "Enter E-Mail" maxlength="100"><br><br>
+
+        <label for="pass_pass">Password :</label>
+        <input type="password" id="txt_pass" placeholder = "Enter Password" maxlength="100"><br><br>
+
+        <input type="button" id="btn_login"value="Login">
+        <input type="button" id = "btn_reg"value="Register"><br><br>
+        <div class="red"><p class="output" id="output1"><br></p><br></div>
+    </center>
+</div>
+
+    <script>
+      const txt1 = document.getElementById('txt_user');
+      const txt2 = document.getElementById('txt_pass');
+      const btn1 = document.getElementById('btn_login');
+      const btn2 = document.getElementById('btn_reg');
+      const out1 = document.getElementById('output1');
+      const count = 0;
+      function fn_login(){
+        if(txt1.value.length <= 0 || txt2.value.length <= 0){
+            out1.innerHTML = "Please enter Username or Password";
+        }
+        else if (txt1.value == "Dan"){
+            if (txt2.value == "admin"){
+                out1.innerHTML = "Loggin in...";
+            window.location.href = "page1.html";
+            }
+        }
+        else{
+            out1.innerHTML = "Incorrect Email or Password"
+        }
+      }
+
+      function fn_reg(){
+        window.location.href = 'register.html';
+      }
+      btn1.addEventListener('click',fn_login);
+      btn2.addEventListener('click',fn_reg);
+      
+    </script>
+</body>
+</html>
